@@ -1,0 +1,11 @@
+Total Revenue = SUM(clean_sales[Revenue])
+Total Orders = DISTINCTCOUNT(clean_sales[InvoiceNo])
+Total Customers = DISTINCTCOUNT(clean_sales[CustomerID])
+Units Sold = SUM(clean_sales[Quantity])
+Average Order Value = DIVIDE([Total Revenue], [Total Orders], 0)
+Revenue per Customer = DIVIDE([Total Revenue], [Total Customers], 0)
+Repeat Customers =
+COUNTROWS(FILTER(VALUES(clean_sales[CustomerID]),
+    CALCULATE(DISTINCTCOUNT(clean_sales[InvoiceNo])) > 1))
+Repeat Customer Rate =
+DIVIDE([Repeat Customers], [Total Customers], 0)

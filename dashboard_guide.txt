@@ -1,0 +1,16 @@
+POWER BI DASHBOARD BUILD
+1. Run download_dataset.py, then customer_sales_analysis.py.
+2. Power BI Desktop > Get Data > Text/CSV > data/clean_sales.csv.
+3. Load customer_rfm_segments.csv as a second table; relate CustomerID.
+4. Set InvoiceDate to Date/Time, Revenue and UnitPrice to Decimal, Quantity to Whole Number.
+5. Add DAX measures from measures.dax.
+6. Create KPI cards: Total Revenue, Total Orders, Total Customers, Average Order Value, Repeat Customer Rate.
+7. Visuals:
+   - Line chart: month vs Total Revenue
+   - Bar chart: Country vs Total Revenue (Top 10)
+   - Bar chart: Description vs Units Sold (Top 10)
+   - Donut: Segment vs customer count
+   - Scatter: Frequency vs Monetary, bubble size = Monetary
+   - Table: CustomerID, Recency, Frequency, Monetary, Segment
+8. Add slicers for Country, InvoiceDate, Segment and StockCode.
+9. Currency is GBP (£), because the original dataset uses sterling.

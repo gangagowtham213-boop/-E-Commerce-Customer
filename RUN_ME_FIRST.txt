@@ -1,0 +1,29 @@
+PROJECT EXECUTION GUIDE
+A. DATASET
+   pip install ucimlrepo pandas
+   python data/download_dataset.py
+   The full official UCI Online Retail dataset is downloaded to data/online_retail_full.csv.
+   A small authentic preview is included at data/online_retail_real_sample.csv.
+
+B. PYTHON ANALYTICS
+   pip install -r requirements.txt
+   python python/customer_sales_analysis.py
+   Outputs: clean_sales.csv, customer_rfm_segments.csv, monthly_sales.csv,
+            country_sales.csv and product_sales.csv in data/.
+
+C. BIG DATA
+   Upload online_retail_full.csv to HDFS.
+   Run MapReduce using mapreduce/run_streaming.sh.
+   Create Hive tables and run hive/ecommerce_hive.sql.
+   Run PySpark ETL with spark-submit pyspark/retail_etl.py.
+
+D. NOSQL
+   Start MongoDB and run mongodb/load_mongodb.py.
+   Start Cassandra, execute cassandra/schema.cql, then run cassandra/load_cassandra.py.
+
+E. POWER BI
+   Follow powerbi/dashboard_guide.txt and import generated CSVs.
+   Add measures from powerbi/measures.dax.
+
+NOTE: Hadoop, Hive, Cassandra and MongoDB services must be installed/running separately.
+This package contains the source scripts and configuration; it does not bundle those server applications.
